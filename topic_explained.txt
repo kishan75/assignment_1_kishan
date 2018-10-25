@@ -1,0 +1,82 @@
+1 what is git ?
+
+git is a free and open source distributed version control system.
+
+git has a branching feature which allows us to work on the different version of the same project.
+git has a log file in which we can review our work.
+reset and revert provide the functionality of undo in our project.
+since it is distributed system so we have multiple backups.
+in case of failure of a remote repository we have backups on local remote repository and vice versa.
+stashing is a feature in which we can store the current state of our project.
+pull a feature in git by we can fetch our code from remote repository to local 
+repository and we can change the code of remote repository by pushing on the remote repository from local repository.
+
+
+2  what is merging?
+
+merging allow us to integrate changes of two different branches into 1 branch.
+for example, we have branch A and branch B and we want to merge
+branch B in branch A;
+
+git cheackout branch  A
+git merge branch B
+
+here branch A will get all file of B and total file = (files of A and files of B)
+but branch B will remain unchanged.  
+
+3. what is rebase?
+rebase is just like merge but the difference is merged combine two branches into one branch and it keeps two-pointer of two branches
+and rebase make it linear and keep only one pointer.
+(sir I didn't get practically).
+
+4. what is stash?
+
+git stash command saves both staged and unstaged files them away for later use.
+stash temporary clean your working tree.
+whenever we want to reapply those staged and unstaged changes we can pop our stash.
+by default, stash take only staged  files so when we want to include non -staged files
+command
+git stash -u 
+
+for ignored files
+git stash -a
+
+when we want to pop all stash file
+git stash pop
+
+we can manually  pop stash by index 
+git stash pop@{index}
+
+we can create a branch as well using  stash pop
+git stash branch <branch name> stash@{stash index}
+
+we can drop entire stash as well as an index of stash 
+
+git stash drop stash@{stash index}
+git stash clear
+
+5 what is commit?
+
+commit command add all staged file in local repository  
+
+command
+git commit -m "message of that commit" 
+
+you can also undo your last commit by 
+git reset --soft HEAD^
+
+if you wanted to add 5 files in your last commit but you did only 5 and you want to add staged file in the last commit
+
+git commit --ammend -m "your message "
+ 
+6. what is pull and pull rebase?
+pull is a name of two consecutive operation fetch and merge 
+
+git pull origin <branch name> 
+by default pull fetch changes from given branch and then perform merge operation.
+
+pull rebase firstly perform fetch operation and then instead of merge it performs rebase operation
+
+(both merge and rebase operation has explained earlier).
+
+
